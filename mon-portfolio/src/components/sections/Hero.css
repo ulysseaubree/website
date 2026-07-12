@@ -8,9 +8,9 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  /* Remplacer par une vraie photo fournie par le client */
-  background-image: url('../../assets/hero.jpg');  background-size: cover;
-  background-position: center;
+  background-image: url('../../assets/hero.jpg');  
+  background-size: cover;
+  background-position: center top;
   transform: scale(1.05);
   transition: transform 8s ease-out;
 }
