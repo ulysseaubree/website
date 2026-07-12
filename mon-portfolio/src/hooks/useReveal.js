@@ -14,9 +14,20 @@ export function useReveal() {
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '200px 0px 0px 0px' }
     )
-    if (ref.current) observer.observe(ref.current)
+
+    if (ref.current) {
+      // Force check immédiat si déjà visible au chargement
+      const rect = ref.current.getBoundingClientRect()
+      if (rect.top < window.innerHeight) {
+        ref.current.querySelectorAll('.reveal').forEach(el => {
+          el.classList.add('visible')
+        })
+      }
+      observer.observe(ref.current)
+    }
+
     return () => observer.disconnect()
   }, [])
 
