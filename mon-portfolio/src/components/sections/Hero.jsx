@@ -10,20 +10,17 @@ export default function Hero() {
       <div className="hero__bg" />
       <div className="hero__overlay" />
       <div className="container hero__content">
-        <p className="hero__eyebrow">Communication financière & Relations Investisseurs</p>
         <h1 className="hero__title">
-          <em>L'art</em> de votre<br />communication financière
+          <em>Vos Experts</em> pour vos relations investisseurs
         </h1>
+        <p className="hero__eyebrow">et votre communication financière et extra financière</p>
         <p className="hero__desc">
-          OsKar Partners vous propose une réponse opérationnelle pour optimiser
+          <em>OsKar Partners</em> vous propose une réponse opérationnelle pour optimiser
           votre temps et vos ressources, répondre à la complexité de vos enjeux.
         </p>
         <div className="hero__actions">
           <button className="btn btn-primary" onClick={() => scrollTo('#notre-offre')}>
-            Découvrir notre offre
-          </button>
-          <button className="btn btn-outline" onClick={() => scrollTo('#contact')}>
-            Nous contacter
+            Quand faire appel à Oskar?
           </button>
         </div>
         <blockquote className="hero__quote">
@@ -32,7 +29,7 @@ export default function Hero() {
           les perdre de vue lorsqu'on les poursuit.
           — Oscar Wilde
         </blockquote>
-      </div>
+      </div> 
       <button className="hero__scroll-hint" onClick={() => scrollTo('#pour-qui')} aria-label="Défiler">
         <ChevronDown size={22} />
       </button>

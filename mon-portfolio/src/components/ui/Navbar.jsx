@@ -5,7 +5,6 @@ import logoOskar from '../../assets/oskar_logo.png'
 import './Navbar.css'
 
 const NAV_ITEMS = [
-  { label: 'Accueil', href: '#accueil' },
   { label: 'Qui sommes-nous', href: '#qui-sommes-nous' },
   { label: 'Notre offre', href: '#notre-offre' },
 ]

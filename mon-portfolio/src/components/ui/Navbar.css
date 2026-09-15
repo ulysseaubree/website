@@ -6,7 +6,7 @@
   transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 .navbar--scrolled {
-  background: rgba(27, 42, 74, 0.97);
+  background: #253D6B;
   backdrop-filter: blur(8px);
   padding-block: 0.85rem;
   box-shadow: 0 2px 20px rgba(0,0,0,0.15);
