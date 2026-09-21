@@ -1,42 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { useReveal } from '../../hooks/useReveal'
+import { OFFRES } from '../../data/offres'
 import './NotreOffre.css'
 
-const OFFRES = [
-  {
-    id: 'supports',
-    label: 'Communication réglementée & corporate',
-    content: ['DEU, RFS, Rapport intégré, Rapport de durabilité', 'Lettres aux actionnaires, Présentations investisseurs', 'Benchmarking des pratiques de marché et de votre secteur', 'Prise en compte de l\'actualité réglementaire', 'Gestion de projet : structuration, élaboration du contenu, rédaction'],
-  },
-  {
-    id: 'ir',
-    label: 'Relations Investisseurs',
-    content: ['Accompagnement lors des temps forts : résultats annuels, semestriels, trimestriels', 'Études de perception & Q&A', 'Benchmarking concurrentiel', 'Gestion de la relation analystes / investisseurs', 'Reporting fonds d\'investissement'],
-  },
-  {
-    id: 'specifique',
-    label: 'Accompagnement spécifique',
-    content: ['Capital Market Days (CMD)', 'Opérations financières : augmentation de capital, acquisition, préparation IPO', 'Préparation des communications au Conseil d\'administration, Assemblée générale', 'Sensibilisation des salariés à l\'environnement d\'un groupe coté'],
-  },
-  {
-    id: 'fonds',
-    label: 'Focus : Levée de fonds',
-    content: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique velit at massa tincidunt scelerisque. massa id mauris euismod mollis eget quis massa. Donec sollicitudin accumsan tellus, ac rhoncus dui fermentum tristique. Praesent nec volutpat nibh.'],
-    placeholder: true,
-  },
-  {
-    id: 'pme',
-    label: 'Focus : Offre PME',
-    content: ['Montrer à vos clients votre réponse aux exigences RSE', 'Accéder à des financements grâce à la qualité de vos publications', 'Trouver un repreneur ou réussir une cession', 'Améliorer l\'adhésion de vos équipes et votre capacité de recrutement', 'Dialoguer avec vos actionnaires pour les fidéliser'],
-  },
-]
-
-function Accordion({ offre, defaultOpen }) {
-  const [open, setOpen] = useState(defaultOpen)
+function Accordion({ offre, open, onToggle }) {
   return (
-    <div className={`offre__item${open ? ' offre__item--open' : ''}`}>
-      <button className="offre__header" onClick={() => setOpen(v => !v)}>
+    <div id={`offre-${offre.id}`} className={`offre__item${open ? ' offre__item--open' : ''}`}>
+      <button className="offre__header" onClick={onToggle}>
         <span className="offre__label">{offre.label}</span>
         <ChevronDown size={20} className="offre__chevron" />
       </button>
@@ -55,6 +26,21 @@ function Accordion({ offre, defaultOpen }) {
 
 export default function NotreOffre() {
   const ref = useReveal()
+  const [openIds, setOpenIds] = useState(() => new Set([OFFRES[0].id]))
+
+  const toggle = id => setOpenIds(prev => {
+    const next = new Set(prev)
+    next.has(id) ? next.delete(id) : next.add(id)
+    return next
+  })
+
+  // La navbar demande l'ouverture d'une offre via le menu déroulant "Notre offre"
+  useEffect(() => {
+    const onOpen = e => setOpenIds(prev => new Set(prev).add(e.detail))
+    window.addEventListener('open-offre', onOpen)
+    return () => window.removeEventListener('open-offre', onOpen)
+  }, [])
+
   return (
     <section id="notre-offre" className="section section--cream">
       <div className="container" ref={ref}>
@@ -66,8 +52,9 @@ export default function NotreOffre() {
           OsKar Partners s'adapte à vos besoins.
         </p>
         <div className="offre__accordion reveal">
-          {OFFRES.map((offre, i) => (
-            <Accordion key={offre.id} offre={offre} defaultOpen={i === 0} />
+          {OFFRES.map(offre => (
+            <Accordion key={offre.id} offre={offre}
+              open={openIds.has(offre.id)} onToggle={() => toggle(offre.id)} />
           ))}
         </div>
       </div>

@@ -26,18 +26,11 @@ export default function Contact() {
                 +33 6 08 33 14 23
               </a>
             </div>
-            {/* Lieu à compléter par le client */}
-            <p className="contact__location">[ Lieu / adresse à compléter ]</p>
+
+           
           </div>
-          <div className="contact__quote reveal" style={{ transitionDelay: '0.15s' }}>
-            <blockquote>
-              <p>
-                "La sagesse, c'est d'avoir des rêves suffisamment grands pour ne pas
-                les perdre de vue lorsqu'on les poursuit."
-              </p>
-              — Oscar Wilde
-            </blockquote>
-          </div>
+          {/* Emplacement de l'image : y placer une <img className="contact__image-img" /> */}
+          <div className="contact__image reveal" style={{ transitionDelay: '0.15s' }} />
         </div>
       </div>
     </section>

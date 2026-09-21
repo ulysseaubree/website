@@ -19,7 +19,7 @@ export default function Hero() {
           votre temps et vos ressources, répondre à la complexité de vos enjeux.
         </p>
         <div className="hero__actions">
-          <button className="btn btn-primary" onClick={() => scrollTo('#notre-offre')}>
+          <button className="btn btn-primary" onClick={() => scrollTo('#pour-qui')}>
             Quand faire appel à Oskar?
           </button>
         </div>

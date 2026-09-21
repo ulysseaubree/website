@@ -1,20 +1,41 @@
 import { useReveal } from '../../hooks/useReveal'
 import './PourQui.css'
 
-const CARDS = [
-  {
-    title: 'Vous êtes',
-    items: ['Un groupe coté', 'Un groupe non coté', 'Une start-up', 'Un fonds de Private Equity'],
-  },
-  {
-    title: 'Vous avez besoin de',
-    items: ['Mettre en œuvre la CSRD', 'Mener un roadshow obligataire', 'Réaliser une opération de marché', 'Faire face à une campagne activiste'],
-  },
-  {
-    title: 'Vous souhaitez',
-    items: ['Répondre aux exigences de la réglementation', 'Gagner en visibilité', 'Atteindre de nouveaux investisseurs', 'Renforcer votre équipe IR'],
-  },
+const SOCIETES = ['Un groupe coté', 'Un groupe non coté', 'Une start-up', 'Un fonds de Private Equity']
+const FONCTIONS = ['Dirigeant', 'Relation Investisseurs', 'Responsable Financement / Trésorerie', 'Responsable RSE']
+const BESOINS_GENERAUX = [
+  'Répondre aux exigences de la réglementation',
+  'Gagner en visibilité',
+  'Atteindre de nouveaux investisseurs',
+  'Renforcer votre équipe IR',
 ]
+const BESOINS_PONCTUELS = [
+  'Mettre en œuvre la CSRD',
+  'Mener un roadshow obligataire',
+  'Réaliser une opération de marché',
+  'Faire face à une campagne activiste',
+  '…',
+]
+const CAS_CONCRETS = [
+  'Une société non cotée fait l\'objet d\'un LBO. Elle veut maîtriser sa communication vers les investisseurs potentiels et comprendre comment elle doit aborder ces nouveaux interlocuteurs.',
+  'Un fonds ou une société d\'investissement souhaite que ses participations répondent aux standards de communication des sociétés cotées.',
+  'Une PME a besoin d\'optimiser ses relations avec son banquier et se présenter de façon professionnelle.',
+  'Une société réfléchit à son introduction en bourse et souhaite se préparer en amont à ce nouvel environnement.',
+  'Une société cotée veut revoir sa politique de communication et s\'interroge sur celle de ses concurrents.',
+  'Une société a besoin de vendre un projet à la communauté financière (projet industriel, opération financière, …)',
+]
+
+function List({ items }) {
+  return (
+    <ul className="pourqui__list">
+      {items.map(item => (
+        <li key={item} className="pourqui__item">
+          <span className="pourqui__dot" />{item}
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 export default function PourQui() {
   const ref = useReveal()
@@ -22,29 +43,35 @@ export default function PourQui() {
     <section id="pour-qui" className="section section--cream">
       <div className="container" ref={ref}>
         <p className="section-eyebrow">Pour qui — Pour quoi</p>
-        <h2 className="section-title">OsKar Partners vous accompagne</h2>
+        <h2 className="section-title">Quand faire appel à OsKar</h2>
         <div className="gold-divider" />
-        <p className="section-subtitle" style={{ marginBottom: '3rem' }}>
-          Une réponse opérationnelle pour optimiser votre temps et vos ressources,
-          répondre à la complexité de vos enjeux.
-        </p>
+
         <div className="pourqui__grid">
-          {CARDS.map((card, i) => (
-            <div key={i} className="pourqui__card reveal" style={{ transitionDelay: `${i * 0.12}s` }}>
-              <h3 className="pourqui__card-title">{card.title}</h3>
-              <ul className="pourqui__list">
-                {card.items.map((item, j) => (
-                  <li key={j} className="pourqui__item">
-                    <span className="pourqui__dot" />{item}
-                  </li>
-                ))}
-              </ul>
+          <div className="pourqui__card pourqui__card--societes reveal">
+            <h3 className="pourqui__card-title">Vous êtes</h3>
+            <List items={SOCIETES} />
+          </div>
+
+          <div className="pourqui__card pourqui__card--fonctions reveal" style={{ transitionDelay: '0.12s' }}>
+            <h3 className="pourqui__card-title">Vous êtes</h3>
+            <List items={FONCTIONS} />
+          </div>
+
+          <div className="pourqui__card pourqui__card--besoins reveal" style={{ transitionDelay: '0.24s' }}>
+            <h3 className="pourqui__card-title">Vous avez besoin de</h3>
+            <div className="pourqui__colonnes">
+              <List items={BESOINS_GENERAUX} />
+              <List items={BESOINS_PONCTUELS} />
             </div>
-          ))}
+          </div>
+
+          <div className="pourqui__card pourqui__card--cas reveal" style={{ transitionDelay: '0.36s' }}>
+            <h3 className="pourqui__card-title">Cas concrets</h3>
+            <div className="pourqui__cas">
+              {CAS_CONCRETS.map(cas => <p key={cas}>{cas}</p>)}
+            </div>
+          </div>
         </div>
-        <p className="pourqui__tagline">
-          Accompagnement annuel · Mission ponctuelle · Externalisation de la fonction IR
-        </p>
       </div>
     </section>
   )

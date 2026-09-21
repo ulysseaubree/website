@@ -1,38 +1,9 @@
 import { useReveal } from '../../hooks/useReveal'
-import Carousel from '../ui/Carousel'
-import { useSheetData, driveUrl } from '../../hooks/useSheetData'
-import linkedinIcon from '../../assets/linkedin.webp'
+import LogoMarquee from '../ui/LogoMarquee'
 import './QuiSommesNous.css'
-
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRChaRuEeu8zpmQlS9k0Jji1c5b8rYOEAq7KaKze2msvurj3joDG3xE7wH6Cfphs2X8TWHOnueGbxq2/pub?gid=0&single=true&output=csv'
-
-function CarteEquipe(item, isCenter) {
-  const { nom, poste, photo, bio, linkedin } = item
-  return (
-    <div className={`carte-equipe${isCenter ? ' carte-equipe--active' : ''}`}>
-      <div className="carte-equipe__photo">
-        {photo
-          ? <img src={driveUrl(photo)} alt={nom || 'Membre'} />
-          : <div className="carte-equipe__avatar">{nom?.[0] ?? '?'}</div>
-        }
-      </div>
-      <div className="carte-equipe__body">
-        {nom && <p className="carte-equipe__nom">{nom}</p>}
-        {poste && <p className="carte-equipe__poste">{poste}</p>}
-        {isCenter && bio && <p className="carte-equipe__bio">{bio}</p>}
-        {isCenter && linkedin && (
-          <a href={linkedin} target="_blank" rel="noopener noreferrer" className="carte-equipe__linkedin">
-            <img src={linkedinIcon} alt="LinkedIn" width="16" height="16" />
-          </a>
-        )}
-      </div>
-    </div>
-  )
-}
 
 export default function QuiSommesNous() {
   const ref = useReveal()
-  const { data, loading, error } = useSheetData(SHEET_URL)
 
   return (
     <section id="qui-sommes-nous" className="section section--dark">
@@ -40,8 +11,8 @@ export default function QuiSommesNous() {
         <p className="section-eyebrow">Qui sommes-nous</p>
         <h2 className="section-title">Un réseau expert, une approche sur mesure</h2>
         <div className="gold-divider" />
-        <div className="qsn__grid">
 
+        <div id="a-propos-du-nom" className="qsn__grid">
           <div className="qsn__block reveal">
             <h3 className="qsn__block-title">À propos du nom</h3>
             <p className="qsn__text"><strong>O</strong> — pour l'Ouverture au monde dans lequel les entreprises évoluent.</p>
@@ -49,30 +20,57 @@ export default function QuiSommesNous() {
             <p className="qsn__text"><strong>AR</strong> — car bien communiquer relève de l'art : un ensemble de gestes précis entre science théorique et pratique spontanée.</p>
             <p className="qsn__text"><em>Mon tout est un Oscar qui récompense les meilleurs professionnels de leur catégorie.</em></p>
           </div>
-          <div className="qsn__block reveal" style={{ transitionDelay: '0.3s' }}>
-            <h3 className="qsn__block-title">Pourquoi choisir OsKar</h3>
-            <ul className="qsn__why">
-              <li>Une culture de l'entreprise et un accompagnement opérationnel</li>
-              <li>Expériences issues de la pratique du métier IR, du journalisme et du conseil</li>
-              <li>Une équipe créée sur mesure grâce à notre réseau partenaires</li>
-              <li className="qsn__placeholder">[ Texte a ajouter ]</li>
-            </ul>
+
+          {/* Emplacement de l'illustration (globe terrestre ?) : y placer une <img className="qsn__image-img" /> */}
+          <div className="qsn__image reveal" style={{ transitionDelay: '0.3s' }} />
+        </div>
+
+        <div id="pourquoi-choisir-oskar" className="qsn__why reveal">
+          <h3 className="qsn__why-title">Pourquoi choisir OsKar</h3>
+          <div className="qsn__why-grid">
+            <div>
+              <h4 className="qsn__why-heading">Notre mission est créatrice de valeur</h4>
+              <p className="qsn__text">
+                Plus que jamais la communication financière et extra financière est un outil de création
+                de valeur pour les entreprises face aux demandes de leurs parties prenantes et dans un
+                contexte d'exigence réglementaire croissante.
+              </p>
+              <p className="qsn__text">
+                Obtenir l'adhésion de ses investisseurs, actionnaires, banquiers, clients, fournisseurs,
+                salariés, … sur sa stratégie, ses résultats, ses perspectives, est en effet un enjeu
+                déterminant pour tout type de société grande ou petite, cotée ou pas. Une communication
+                financière et extra financière efficace, transparente et pédagogique permet d'y répondre
+                avec succès.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="qsn__why-heading">Nous avons développé une approche de Boutique - Conseil</h4>
+              <p className="qsn__text">
+                Vous avez accès à des <strong>experts</strong> de vos problématiques, immédiatement
+                opérationnels. Vous bénéficiez de leur <strong>séniorité</strong> et de leur vision
+                globale de vos enjeux.
+              </p>
+              <p className="qsn__text">
+                OsKar vous propose une <strong>réponse complète taillée sur-mesure grâce à l'écoute et
+                la compréhension de vos besoins et la souplesse de notre structure.</strong>
+              </p>
+              <p className="qsn__text">
+                Autour de la Relation investisseurs, OsKar a développé un réseau de partenaires experts
+                sur toute la chaîne de valeur de vos projets dans les domaines de l'ESG, la rédaction,
+                la traduction, le design, la gestion des risques, le M&amp;A, … Nous pouvons à la demande
+                être un <strong>agrégateur de compétences</strong> pour une <strong>approche intégrée et
+                cohérente de vos besoins</strong>. OsKar est ainsi en mesure de créer en toute
+                transparence une équipe répondant aux critères de compétences et de séniorité requis
+                pour la mission. Ce mode de fonctionnement permet à OsKar d'offrir à ses clients une
+                équipe dédiée, disponible et réactive, tout en gardant les qualités de proximité que
+                seule une agence à taille humaine peut proposer.
+              </p>
+            </div>
           </div>
 
+          <LogoMarquee />
         </div>
-
-        <div className="qsn__equipe reveal" style={{ transitionDelay: '0.2s' }}>
-          <h3 className="qsn__equipe-title">Notre équipe</h3>
-          {loading && <p className="sheet-status">Chargement de l'équipe...</p>}
-          {error && <p className="sheet-status sheet-status--error">Impossible de charger l'équipe.</p>}
-          {!loading && !error && data.length === 0 && (
-            <p className="sheet-status">Aucun membre à afficher.</p>
-          )}
-          {!loading && !error && data.length > 0 && (
-            <Carousel items={data} renderCard={(item, isCenter) => CarteEquipe(item, isCenter)} />
-          )}
-        </div>
-
       </div>
     </section>
   )

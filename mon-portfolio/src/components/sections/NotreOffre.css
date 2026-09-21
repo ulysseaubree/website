@@ -1,5 +1,5 @@
 .offre__accordion { border: 1px solid var(--color-border); }
-.offre__item { border-bottom: 1px solid var(--color-border); }
+.offre__item { border-bottom: 1px solid var(--color-border); scroll-margin-top: 90px; }
 .offre__item:last-child { border-bottom: none; }
 .offre__header {
   width: 100%;
