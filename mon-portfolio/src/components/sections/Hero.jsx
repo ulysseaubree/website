@@ -11,9 +11,9 @@ export default function Hero() {
       <div className="hero__overlay" />
       <div className="container hero__content">
         <h1 className="hero__title">
-          <em>Vos Experts</em> pour vos relations investisseurs
+          <em>Vos Experts</em> pour vos relations investisseurs et votre communication
+          financière et extra financière
         </h1>
-        <p className="hero__eyebrow">et votre communication financière et extra financière</p>
         <p className="hero__desc">
           <em>OsKar Partners</em> vous propose une réponse opérationnelle pour optimiser
           votre temps et vos ressources, répondre à la complexité de vos enjeux.

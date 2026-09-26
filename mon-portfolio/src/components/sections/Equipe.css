@@ -1,4 +1,10 @@
-.equipe__intro { max-width: 760px; margin-bottom: 3rem; }
+.equipe__intro {
+  max-width: 760px;
+  margin-bottom: 3rem;
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+}
 .equipe__grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -74,7 +80,7 @@
 }
 
 .equipe__competences {
-  background: var(--color-navy);
+  background: var(--color-navy-light);
   padding: 2.5rem;
   display: flex;
   flex-direction: column;

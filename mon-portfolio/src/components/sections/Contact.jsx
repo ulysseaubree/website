@@ -1,5 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
 import { useReveal } from '../../hooks/useReveal'
+import contactImg from '../../assets/slope_square.jpeg'
 import './Contact.css'
 
 export default function Contact() {
@@ -7,11 +8,11 @@ export default function Contact() {
   return (
     <section id="contact" className="section section--dark">
       <div className="container" ref={ref}>
-        <p className="section-eyebrow">Contact</p>
-        <h2 className="section-title">Parlons de votre projet</h2>
-        <div className="gold-divider" />
         <div className="contact__grid">
           <div className="contact__info reveal">
+            <p className="section-eyebrow">Contact</p>
+            <h2 className="section-title">Parlons de votre projet</h2>
+            <div className="gold-divider" />
             <p className="contact__desc">
               Vous souhaitez en savoir plus sur nos services ou discuter d'une mission ?
               Florence Daumal est à votre disposition.
@@ -26,11 +27,10 @@ export default function Contact() {
                 +33 6 08 33 14 23
               </a>
             </div>
-
-           
           </div>
-          {/* Emplacement de l'image : y placer une <img className="contact__image-img" /> */}
-          <div className="contact__image reveal" style={{ transitionDelay: '0.15s' }} />
+          <div className="contact__image reveal" style={{ transitionDelay: '0.15s' }}>
+            <img src={contactImg} alt="" className="contact__image-img" />
+          </div>
         </div>
       </div>
     </section>

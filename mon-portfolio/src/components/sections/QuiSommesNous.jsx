@@ -1,5 +1,7 @@
 import { useReveal } from '../../hooks/useReveal'
 import LogoMarquee from '../ui/LogoMarquee'
+import Equipe from './Equipe.jsx'
+import harborImg from '../../assets/harbor.jpeg'
 import './QuiSommesNous.css'
 
 export default function QuiSommesNous() {
@@ -12,20 +14,7 @@ export default function QuiSommesNous() {
         <h2 className="section-title">Un réseau expert, une approche sur mesure</h2>
         <div className="gold-divider" />
 
-        <div id="a-propos-du-nom" className="qsn__grid">
-          <div className="qsn__block reveal">
-            <h3 className="qsn__block-title">À propos du nom</h3>
-            <p className="qsn__text"><strong>O</strong> — pour l'Ouverture au monde dans lequel les entreprises évoluent.</p>
-            <p className="qsn__text"><strong>K</strong> — parce que chaque entreprise, chaque mission est un cas particulier.</p>
-            <p className="qsn__text"><strong>AR</strong> — car bien communiquer relève de l'art : un ensemble de gestes précis entre science théorique et pratique spontanée.</p>
-            <p className="qsn__text"><em>Mon tout est un Oscar qui récompense les meilleurs professionnels de leur catégorie.</em></p>
-          </div>
-
-          {/* Emplacement de l'illustration (globe terrestre ?) : y placer une <img className="qsn__image-img" /> */}
-          <div className="qsn__image reveal" style={{ transitionDelay: '0.3s' }} />
-        </div>
-
-        <div id="pourquoi-choisir-oskar" className="qsn__why reveal">
+        <div id="pourquoi-choisir-oskar" className="qsn__section reveal">
           <h3 className="qsn__why-title">Pourquoi choisir OsKar</h3>
           <div className="qsn__why-grid">
             <div>
@@ -70,6 +59,29 @@ export default function QuiSommesNous() {
           </div>
 
           <LogoMarquee />
+        </div>
+
+        <Equipe />
+
+        <div id="a-propos-du-nom" className="qsn__section qsn__grid">
+          <div className="qsn__block reveal">
+            <h3 className="qsn__block-title">À propos du nom</h3>
+
+            <p className="qsn__charade-label">Mon premier est</p>
+            <p className="qsn__text"><strong>O</strong> — pour l'Ouverture au monde dans lequel les entreprises évoluent.</p>
+
+            <p className="qsn__charade-label">Mon deuxième est</p>
+            <p className="qsn__text"><strong>K</strong> — parce que chaque entreprise, chaque mission est un cas particulier.</p>
+
+            <p className="qsn__charade-label">Mon troisième est</p>
+            <p className="qsn__text"><strong>AR</strong> — car bien communiquer relève de l'art : un ensemble de gestes précis entre science théorique et pratique spontanée.</p>
+
+            <p className="qsn__text"><em>Mon tout est un Oscar qui récompense les meilleurs professionnels de leur catégorie.</em></p>
+          </div>
+
+          <div className="qsn__image reveal" style={{ transitionDelay: '0.3s' }}>
+            <img src={harborImg} alt="" className="qsn__image-img" />
+          </div>
         </div>
       </div>
     </section>

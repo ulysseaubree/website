@@ -8,10 +8,11 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/hero.jpg');  
+  background-image: url('../../assets/beach_picture.jpeg');
   background-size: cover;
-  background-position: center top;
-  transform: scale(1.05);
+  background-position: center;
+  filter: blur(6px);
+  transform: scale(1.1);
   transition: transform 8s ease-out;
 }
 .hero:hover .hero__bg { transform: scale(1); }
@@ -27,25 +28,16 @@
   padding-top: 6rem;
   padding-bottom: 4rem;
 }
-.hero__eyebrow {
-  font-size: var(--text-s);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: 1.25rem;
-  animation: fadeUp 0.8s var(--ease-out) 0.1s both;
-}
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-white);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   animation: fadeUp 0.8s var(--ease-out) 0.2s both;
 }
-.hero__title em { color: var(--color-navy-light); font-style: italic; }
+.hero__title em { color: var(--color-gold); font-style: italic; }
 .hero__desc {
   font-size: var(--text-lg);
   color: rgba(255,255,255,0.8);

@@ -1,9 +1,14 @@
+.qsn__section { scroll-margin-top: 90px; }
+.qsn__section + .qsn__section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
 .qsn__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
-  scroll-margin-top: 90px;
 }
 .qsn__block {
   background: rgba(255,255,255,0.05);
@@ -21,6 +26,15 @@
 .qsn__text strong { color: var(--color-gold); font-weight: 600; }
 .qsn__text em { font-style: italic; color: rgba(255,255,255,0.6); }
 
+/* Charade « OsKAR » : une légende grisée et centrée au-dessus de chaque lettre,
+   dans le même encadré que le reste du texte (pas de cases séparées). */
+.qsn__charade-label {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
 .qsn__image {
   min-height: 260px;
   background: rgba(255,255,255,0.05);
@@ -29,12 +43,6 @@
 }
 .qsn__image-img { width: 100%; height: 100%; object-fit: cover; }
 
-.qsn__why {
-  margin-top: 4rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 3rem;
-  scroll-margin-top: 90px;
-}
 .qsn__why-title {
   font-family: var(--font-display);
   font-size: var(--text-2xl);

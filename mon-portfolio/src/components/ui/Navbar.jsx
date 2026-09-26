@@ -11,11 +11,11 @@ const NAV_ITEMS = [
     label: 'Qui sommes-nous',
     href: '#qui-sommes-nous',
     sub: [
-      { label: 'À propos du nom', href: '#a-propos-du-nom' },
       { label: 'Pourquoi choisir OsKar', href: '#pourquoi-choisir-oskar' },
+      { label: 'Équipe', href: '#equipe' },
+      { label: 'À propos du nom', href: '#a-propos-du-nom' },
     ],
   },
-  { label: 'Équipe', href: '#equipe' },
   {
     label: 'Notre offre',
     href: '#notre-offre',
@@ -26,6 +26,9 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  // Force la fermeture (en fondu) du menu déroulant survolé après un clic sur une
+  // sous-section, sans attendre que la souris quitte réellement le bouton parent.
+  const [closingDropdown, setClosingDropdown] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -40,6 +43,13 @@ export default function Navbar() {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const handleSubLink = (e, href, offre) => {
+    handleLink(e, href, offre)
+    setClosingDropdown(true)
+    // filet de sécurité si la souris ne quitte jamais le bouton parent
+    setTimeout(() => setClosingDropdown(false), 600)
+  }
+
   return (
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
@@ -49,7 +59,9 @@ export default function Navbar() {
 
         <nav className={`navbar__nav${menuOpen ? ' navbar__nav--open' : ''}`}>
           {NAV_ITEMS.map(item => (
-            <div key={item.href} className={`navbar__item${item.sub ? ' navbar__item--has-sub' : ''}`}>
+            <div key={item.href}
+              className={`navbar__item${item.sub ? ' navbar__item--has-sub' : ''}${closingDropdown ? ' navbar__item--closing' : ''}`}
+              onMouseLeave={() => setClosingDropdown(false)}>
               <a href={item.href} className="navbar__link"
                 onClick={e => handleLink(e, item.href)}>
                 {item.label}
@@ -60,7 +72,7 @@ export default function Navbar() {
                   {item.sub.map(sub => (
                     <li key={sub.href}>
                       <a href={sub.href} className="navbar__sublink"
-                        onClick={e => handleLink(e, sub.href, sub.offre)}>
+                        onClick={e => handleSubLink(e, sub.href, sub.offre)}>
                         {sub.label}
                       </a>
                     </li>

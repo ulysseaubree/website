@@ -29,14 +29,32 @@
 .offre__body {
   max-height: 0;
   overflow: hidden;
+  background: var(--color-white);
   transition: max-height 0.4s var(--ease-out);
 }
-.offre__item--open .offre__body { max-height: 400px; }
+.offre__item--open .offre__body { max-height: 1500px; }
+.offre__role {
+  padding: 1.5rem 2rem 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.offre__role strong { color: var(--color-navy); font-weight: 600; }
+.offre__role + .offre__list,
+.offre__role + .offre__intro-group { padding-top: 0.75rem; }
+.offre__intro-group { padding: 1.5rem 2rem 0; }
+.offre__intro-group + .offre__list { padding-top: 0.75rem; }
+.offre__intro {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+.offre__intro:last-child { margin-bottom: 0; }
 .offre__list {
   list-style: none;
   padding: 1.5rem 2rem 2rem;
   display: flex; flex-direction: column; gap: 0.75rem;
-  background: var(--color-white);
 }
 .offre__list-item {
   display: flex; align-items: flex-start; gap: 0.75rem;
@@ -45,8 +63,55 @@
   line-height: 1.55;
 }
 .offre__placeholder { opacity: 0.5; font-style: italic; }
+.offre__sublist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.offre__sublist li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--color-text-muted);
+}
+.offre__sublist li::before { content: '–'; position: absolute; left: 0; color: var(--color-gold); }
+
+/* Cadre très léger pour ne pas alourdir la sous-section (ex. Focus : Offre PME) */
+.offre__callout {
+  margin: 0 2rem 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-gold);
+}
+.offre__callout:last-child { margin-bottom: 2rem; }
+.offre__callout-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.offre__callout-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 0.75rem;
+}
+.offre__callout-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.offre__callout-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.offre__callout-list li::before { content: '→'; position: absolute; left: 0; color: var(--color-gold); }
 
 @media (max-width: 600px) {
   .offre__header { padding: 1.25rem; }
+  .offre__role { padding: 1.25rem 1.25rem 0; }
+  .offre__intro-group { padding: 1.25rem 1.25rem 0; }
   .offre__list { padding: 1.25rem; }
+  .offre__callout { margin: 0 1.25rem 1.25rem; padding: 1rem; }
 }

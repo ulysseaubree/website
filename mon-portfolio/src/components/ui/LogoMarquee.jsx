@@ -5,7 +5,7 @@ const PLACEHOLDER_COUNT = 6
 
 // Bandeau de logos en défilement continu. La liste est rendue deux fois
 // pour que la boucle de l'animation (translation de -50 %) soit invisible.
-export default function LogoMarquee({ logos = PARTENAIRES, label = 'Nos partenaires' }) {
+export default function LogoMarquee({ logos = PARTENAIRES, label = 'Nos références' }) {
   const items = logos.length > 0
     ? logos
     : Array.from({ length: PLACEHOLDER_COUNT }, () => null)

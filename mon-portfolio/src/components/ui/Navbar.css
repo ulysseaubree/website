@@ -81,6 +81,13 @@
   visibility: visible;
   transform: translateY(0);
 }
+/* clic sur une sous-section : referme le menu déroulant en fondu, même si la
+   souris est encore dessus (voir navbar__item--closing dans Navbar.jsx) */
+.navbar__item--closing .navbar__dropdown {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(6px) !important;
+}
 .navbar__sublink {
   display: block;
   padding: 0.6rem 1.25rem;

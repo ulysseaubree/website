@@ -1,16 +1,20 @@
 .pourqui__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.25fr;
-  grid-template-areas:
-    "societes fonctions cas"
-    "besoins  besoins   cas";
+  grid-template-columns: 1fr 1.25fr;
   gap: 1.5rem;
   margin-top: 2.5rem;
+  align-items: start;
 }
-.pourqui__card--societes { grid-area: societes; }
-.pourqui__card--fonctions { grid-area: fonctions; }
-.pourqui__card--besoins { grid-area: besoins; }
-.pourqui__card--cas { grid-area: cas; }
+.pourqui__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.pourqui__top-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
 .pourqui__card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -62,17 +66,8 @@
 }
 
 @media (max-width: 900px) {
-  .pourqui__grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "societes fonctions"
-      "besoins  besoins"
-      "cas      cas";
-  }
+  .pourqui__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
-  .pourqui__grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: "societes" "fonctions" "besoins" "cas";
-  }
+  .pourqui__top-cards { grid-template-columns: 1fr; }
 }
