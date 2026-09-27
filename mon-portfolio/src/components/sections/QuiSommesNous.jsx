@@ -2,6 +2,7 @@ import { useReveal } from '../../hooks/useReveal'
 import LogoMarquee from '../ui/LogoMarquee'
 import Equipe from './Equipe.jsx'
 import harborImg from '../../assets/harbor.jpeg'
+import skyImg from '../../assets/sky_upsize.jpg'
 import './QuiSommesNous.css'
 
 export default function QuiSommesNous() {
@@ -17,7 +18,7 @@ export default function QuiSommesNous() {
         <div id="pourquoi-choisir-oskar" className="qsn__section reveal">
           <h3 className="qsn__why-title">Pourquoi choisir OsKar</h3>
           <div className="qsn__why-grid">
-            <div>
+            <div className="qsn__mission">
               <h4 className="qsn__why-heading">Notre mission est créatrice de valeur</h4>
               <p className="qsn__text">
                 Plus que jamais la communication financière et extra financière est un outil de création
@@ -31,6 +32,9 @@ export default function QuiSommesNous() {
                 financière et extra financière efficace, transparente et pédagogique permet d'y répondre
                 avec succès.
               </p>
+              <div className="qsn__mission-image">
+                <img src={skyImg} alt="" className="qsn__mission-image-img" />
+              </div>
             </div>
 
             <div>
@@ -67,13 +71,13 @@ export default function QuiSommesNous() {
           <div className="qsn__block reveal">
             <h3 className="qsn__block-title">À propos du nom</h3>
 
-            <p className="qsn__charade-label">Mon premier est</p>
+            <p className="qsn__charade-label">Mon premier est un</p>
             <p className="qsn__text"><strong>O</strong> — pour l'Ouverture au monde dans lequel les entreprises évoluent.</p>
 
-            <p className="qsn__charade-label">Mon deuxième est</p>
+            <p className="qsn__charade-label">Mon deuxième est un</p>
             <p className="qsn__text"><strong>K</strong> — parce que chaque entreprise, chaque mission est un cas particulier.</p>
 
-            <p className="qsn__charade-label">Mon troisième est</p>
+            <p className="qsn__charade-label">Mon troisième est un</p>
             <p className="qsn__text"><strong>AR</strong> — car bien communiquer relève de l'art : un ensemble de gestes précis entre science théorique et pratique spontanée.</p>
 
             <p className="qsn__text"><em>Mon tout est un Oscar qui récompense les meilleurs professionnels de leur catégorie.</em></p>

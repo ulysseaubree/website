@@ -14,17 +14,19 @@ import amcor from '../assets/logo/amcor.webp'
 import moniteur from '../assets/logo/Moniteur.webp'
 import ovh from '../assets/logo/ovh.webp'
 
+// `note: true` marque les références réalisées en partenariat avec Labrador
+// (affiche un petit astérisque à côté du logo, voir le renvoi sous le bandeau).
 export const PARTENAIRES = [
   { name: 'Valeo', src: valeo },
   { name: 'Veolia', src: veolia },
-  { name: 'Renault', src: renault },
+  { name: 'Renault', src: renault, note: true },
   { name: 'BPCE', src: bpce },
   { name: 'Kepler Cheuvreux', src: kepler },
-  { name: 'Latécoère', src: latecoere },
-  { name: 'Fleury Michon', src: fleuryMichon },
-  { name: 'Soitec', src: soitec },
-  { name: 'Inea', src: inea },
+  { name: 'Latécoère', src: latecoere, note: true },
+  { name: 'Fleury Michon', src: fleuryMichon, note: true },
+  { name: 'Soitec', src: soitec, note: true },
+  { name: 'Inea', src: inea, note: true },
   { name: 'Amcor', src: amcor },
   { name: 'Le Moniteur', src: moniteur },
-  { name: 'OVH', src: ovh },
+  { name: 'OVH', src: ovh, note: true },
 ]

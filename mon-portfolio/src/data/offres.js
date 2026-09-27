@@ -2,10 +2,8 @@ export const OFFRES = [
   {
     id: 'supports',
     label: 'Communication réglementée & corporate',
-    role: 'valoriser et assurer la cohérence de vos messages sur tous vos supports.',
+    role: 'valoriser et assurer la cohérence de vos messages sur tous vos supports : DEU, RFS, Rapport intégré, Rapport de durabilité Lettres aux actionnaires, Présentations investisseurs, ...',
     content: [
-      'DEU, RFS, Rapport intégré, Rapport de durabilité',
-      'Lettres aux actionnaires, Présentations investisseurs',
       'Benchmarking des pratiques de marché et de votre secteur',
       'Prise en compte de l\'actualité réglementaire',
       { label: 'Gestion de projet', sub: ['Structuration', 'Élaboration du contenu', 'Rédaction'] },

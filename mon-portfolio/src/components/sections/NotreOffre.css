@@ -1,5 +1,8 @@
 .offre__accordion { border: 1px solid var(--color-border); }
-.offre__item { border-bottom: 1px solid var(--color-border); scroll-margin-top: 90px; }
+/* 370px (et non 90px) pour que le lien direct vers une offre (menu « Notre offre »)
+   révèle aussi le grand titre « Une offre sur mesure » au-dessus, pas seulement
+   l'en-tête de l'accordéon. */
+.offre__item { border-bottom: 1px solid var(--color-border); scroll-margin-top: 370px; }
 .offre__item:last-child { border-bottom: none; }
 .offre__header {
   width: 100%;

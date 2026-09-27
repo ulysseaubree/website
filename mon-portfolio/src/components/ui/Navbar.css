@@ -99,6 +99,38 @@
 .navbar__cta { font-size: var(--text-xs); padding: 0.55rem 1.25rem; }
 .navbar__burger { display: none; background: none; border: none; color: var(--color-white); cursor: pointer; z-index: 200; }
 
+/* Indice de défilement temporaire après un clic sur un raccourci du bandeau
+   (même esprit que .hero__scroll-hint, mais piloté par la navbar). */
+.navbar__scroll-hint {
+  position: fixed;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 90;
+  background: var(--color-navy);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s, border-color 0.2s, color 0.2s;
+}
+.navbar__scroll-hint--visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: navbar-scroll-hint-bounce 1.6s ease-in-out infinite;
+}
+.navbar__scroll-hint:hover { border-color: var(--color-gold); color: var(--color-gold); }
+@keyframes navbar-scroll-hint-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
 .navbar__logo-img {
   height: clamp(34px, 4.5vw, 48px);
   width: auto;

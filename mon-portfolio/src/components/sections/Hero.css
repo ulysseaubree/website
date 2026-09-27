@@ -11,7 +11,6 @@
   background-image: url('../../assets/beach_picture.jpeg');
   background-size: cover;
   background-position: center;
-  filter: blur(6px);
   transform: scale(1.1);
   transition: transform 8s ease-out;
 }

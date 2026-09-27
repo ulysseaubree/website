@@ -15,6 +15,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
+/* Cartes « Vous êtes » resserrées verticalement pour laisser apparaître
+   « Vous avez besoin de » plus tôt, sans avoir à trop défiler. */
+.pourqui__top-cards .pourqui__card { padding-block: 1.25rem; }
+.pourqui__top-cards .pourqui__card-title { margin-bottom: 0.85rem; }
+.pourqui__top-cards .pourqui__list { gap: 0.5rem; }
 .pourqui__card {
   background: var(--color-white);
   border: 1px solid var(--color-border);

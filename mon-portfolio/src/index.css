@@ -47,7 +47,7 @@ a { color: inherit; text-decoration: none; }
   margin-inline: auto;
   padding-inline: var(--container-pad);
 }
-.section { padding-block: var(--space-section); }
+.section { padding-block: var(--space-section); scroll-margin-top: 90px; }
 .section--dark { background: var(--color-navy); color: var(--color-white); }
 .section--cream { background: var(--color-cream); }
 
