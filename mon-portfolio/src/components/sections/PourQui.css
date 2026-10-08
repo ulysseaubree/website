@@ -1,3 +1,7 @@
+/* La section suit directement le héros plein écran, qui laisse déjà un peu de
+   vide sous son propre texte : on resserre encore l'espace au-dessus du titre. */
+#pour-qui { padding-top: 3rem; }
+
 .pourqui__grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
@@ -59,6 +63,9 @@
   align-items: start;
 }
 .pourqui__card--cas {
+  /* ne s'étire pas sur toute la hauteur de la colonne de gauche : s'arrête
+     juste après son propre texte, sans grand espace vide en dessous. */
+  align-self: start;
   background: var(--color-navy);
   border-color: var(--color-navy);
 }

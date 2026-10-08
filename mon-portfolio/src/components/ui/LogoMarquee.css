@@ -9,8 +9,10 @@
 }
 .marquee__viewport {
   overflow: hidden;
-  padding-block: 1.25rem;
-  border-block: 1px solid rgba(255,255,255,0.1);
+  /* pas de bordure/marge basse : le séparateur de sous-section juste en
+     dessous suffit, sinon ça fait deux traits gris avec un vide entre eux */
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
@@ -22,7 +24,6 @@
 }
 .marquee__viewport:hover .marquee__track { animation-play-state: paused; }
 .marquee__item {
-  position: relative;
   flex-shrink: 0;
   width: 180px;
   height: 64px;
@@ -30,23 +31,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-/* Petit renvoi (astérisque) pour les références en partenariat avec Labrador */
-.marquee__note {
-  position: absolute;
-  top: -2px; right: 2px;
-  font-size: var(--text-base);
-  font-weight: 700;
-  line-height: 1;
-  color: var(--color-gold);
-  pointer-events: none;
-}
-.marquee__footnote {
-  margin-top: 0.75rem;
-  text-align: center;
-  font-size: var(--text-xs);
-  color: rgba(255,255,255,0.35);
-  font-style: italic;
 }
 .marquee__logo {
   width: 100%;

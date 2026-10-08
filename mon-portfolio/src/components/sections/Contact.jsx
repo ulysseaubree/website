@@ -1,6 +1,6 @@
 import { Mail, Phone } from 'lucide-react'
 import { useReveal } from '../../hooks/useReveal'
-import contactImg from '../../assets/slope_square.jpeg'
+import contactImg from '../../assets/slope_vertical.jpg'
 import './Contact.css'
 
 export default function Contact() {

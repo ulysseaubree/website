@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* plafonnée : sur un grand écran, un plein 100vh centre le texte si loin du
+     bas que la section suivante se retrouve avec un immense vide au-dessus. */
+  min-height: min(100vh, 880px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -8,7 +10,7 @@
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('../../assets/beach_picture.jpeg');
+  background-image: url('../../assets/sky_upsize.jpg');
   background-size: cover;
   background-position: center;
   transform: scale(1.1);

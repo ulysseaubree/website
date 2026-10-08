@@ -1,7 +1,7 @@
 import { useReveal } from '../../hooks/useReveal'
 import LogoMarquee from '../ui/LogoMarquee'
 import Equipe from './Equipe.jsx'
-import harborImg from '../../assets/harbor.jpeg'
+import harborImg from '../../assets/harbor.jpg'
 import skyImg from '../../assets/sky_upsize.jpg'
 import './QuiSommesNous.css'
 
