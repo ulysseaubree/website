@@ -12,7 +12,9 @@
   inset: 0;
   background-image: url('../../assets/sky_upsize.jpg');
   background-size: cover;
-  background-position: center;
+  /* ancré en bas : la montagne (tout en bas de la photo, le reste n'étant que
+     du ciel) reste visible plutôt que d'être rognée par un cadrage centré */
+  background-position: center bottom;
   transform: scale(1.1);
   transition: transform 8s ease-out;
 }
