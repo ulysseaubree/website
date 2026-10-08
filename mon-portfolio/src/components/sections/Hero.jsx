@@ -1,5 +1,4 @@
 import { ChevronDown } from 'lucide-react'
-import linkedinIcon from '../../assets/linkedin.webp'
 import './Hero.css'
 
 export default function Hero() {
@@ -33,10 +32,6 @@ export default function Hero() {
       <button className="hero__scroll-hint" onClick={() => scrollTo('#pour-qui')} aria-label="Défiler">
         <ChevronDown size={22} />
       </button>
-      <a href="https://www.linkedin.com/company/oskar-partners" target="_blank"
-        rel="noopener noreferrer" className="hero__linkedin" aria-label="LinkedIn OsKar Partners">
-        <img src={linkedinIcon} alt="LinkedIn" width="18" height="18" />
-      </a>
     </section>
   )
 }

@@ -1,7 +1,7 @@
 export const OFFRES = [
   {
     id: 'supports',
-    label: 'Communication réglementée & corporate',
+    label: 'Communication réglementée et corporate',
     role: 'valoriser et assurer la cohérence de vos messages sur tous vos supports : DEU, Rapport financier semestriel, Rapport intégré, Lettres aux actionnaires, Présentation investisseurs, Communiqué…',
     content: [
       'Benchmarking des pratiques de marché et de votre secteur',
@@ -11,7 +11,7 @@ export const OFFRES = [
   },
   {
     id: 'ir',
-    label: 'Relations Investisseurs',
+    label: 'Relations investisseurs',
     role: 'vous aider à préparer et diffuser vos messages, du conseil à la prise en charge complète.',
     content: [
       'Accompagnement lors des temps forts : résultats annuels, semestriels, trimestriels',
@@ -25,7 +25,7 @@ export const OFFRES = [
   },
   {
     id: 'specifique',
-    label: 'Accompagnement spécifique',
+    label: 'Accompagnements Spécifiques',
     role: 'apporter notre expertise opérationnelle pour vos projets structurants dans la vie de l\'entreprise.',
     content: [
       'Capital Market Days (CMD)',

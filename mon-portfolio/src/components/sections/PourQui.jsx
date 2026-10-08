@@ -47,14 +47,10 @@ export default function PourQui() {
         <div className="gold-divider" />
 
         <div className="pourqui__grid">
-          <div className="pourqui__top-cards">
-            <div className="pourqui__card reveal">
-              <h3 className="pourqui__card-title">Vous êtes</h3>
+          <div className="pourqui__card reveal">
+            <h3 className="pourqui__card-title">Vous êtes</h3>
+            <div className="pourqui__colonnes">
               <List items={SOCIETES} />
-            </div>
-
-            <div className="pourqui__card reveal" style={{ transitionDelay: '0.12s' }}>
-              <h3 className="pourqui__card-title">Vous êtes</h3>
               <List items={FONCTIONS} />
             </div>
           </div>

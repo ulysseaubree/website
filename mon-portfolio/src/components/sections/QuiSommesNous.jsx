@@ -51,13 +51,11 @@ export default function QuiSommesNous() {
               <p className="qsn__text">
                 Autour de la Relation investisseurs, OsKar a développé un réseau de partenaires experts
                 sur toute la chaîne de valeur de vos projets dans les domaines de l'ESG, la rédaction,
-                la traduction, le design, la gestion des risques, le M&amp;A, … Nous pouvons à la demande
+                la traduction, le design, la gestion des risques, … Nous pouvons à la demande
                 être un <strong>agrégateur de compétences</strong> pour une <strong>approche intégrée et
-                cohérente de vos besoins</strong>. OsKar est ainsi en mesure de créer en toute
-                transparence une équipe répondant aux critères de compétences et de séniorité requis
-                pour la mission. Ce mode de fonctionnement permet à OsKar de créer l'équipe, disponible
-                et réactive, répondant aux critères spécifiques de la mission, tout en gardant les
-                qualités de proximité que seule une agence à taille humaine peut proposer.
+                cohérente de vos besoins</strong>. Ce mode de fonctionnement permet à OsKar de créer
+                l'équipe, disponible et réactive, répondant aux critères spécifiques de la mission, tout
+                en gardant les qualités de proximité que seule une agence à taille humaine peut proposer.
               </p>
             </div>
           </div>
