@@ -1,7 +1,3 @@
-/* Resserre le vide au-dessus de Contact : la fin de l'accordéon « Notre
-   offre » juste avant laisse déjà sa propre marge basse. */
-#contact { padding-top: 3rem; }
-
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1,6 +1,3 @@
-/* Resserre le vide sous l'accordéon, avant la section Contact qui suit. */
-#notre-offre { padding-bottom: 3rem; }
-
 .offre__accordion { border: 1px solid var(--color-border); }
 /* 370px (et non 90px) pour que le lien direct vers une offre (menu « Notre offre »)
    révèle aussi le grand titre « Une offre sur mesure » au-dessus, pas seulement

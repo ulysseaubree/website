@@ -3,7 +3,7 @@
 // Tant que la liste est vide, le cadre affiche des emplacements réservés.
 import valeo from '../assets/logo/Valeo.webp'
 import veolia from '../assets/logo/veolia.webp'
-import renault from '../assets/logo/renault.webp'
+import renault from '../assets/logo/renault.png'
 import bpce from '../assets/logo/BPCE.webp'
 import kepler from '../assets/logo/Kepler.webp'
 import latecoere from '../assets/logo/Latecoere.webp'

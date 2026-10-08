@@ -47,32 +47,30 @@ export default function PourQui() {
         <div className="gold-divider" />
 
         <div className="pourqui__grid">
+          <div className="pourqui__top-cards">
+            <div className="pourqui__card reveal">
+              <h3 className="pourqui__card-title">Vous êtes</h3>
+              <List items={SOCIETES} />
+            </div>
+
+            <div className="pourqui__card reveal" style={{ transitionDelay: '0.12s' }}>
+              <h3 className="pourqui__card-title">Vous êtes</h3>
+              <List items={FONCTIONS} />
+            </div>
+          </div>
+
+          <div className="pourqui__card pourqui__card--besoins reveal" style={{ transitionDelay: '0.24s' }}>
+            <h3 className="pourqui__card-title">Vous souhaitez</h3>
+            <div className="pourqui__colonnes">
+              <List items={BESOINS_GENERAUX} />
+              <List items={BESOINS_PONCTUELS} />
+            </div>
+          </div>
+
           <div className="pourqui__card pourqui__card--cas reveal" style={{ transitionDelay: '0.36s' }}>
             <h3 className="pourqui__card-title">Cas concrets</h3>
             <div className="pourqui__cas">
               {CAS_CONCRETS.map(cas => <p key={cas}>{cas}</p>)}
-            </div>
-          </div>
-
-          <div className="pourqui__left">
-            <div className="pourqui__top-cards">
-              <div className="pourqui__card reveal">
-                <h3 className="pourqui__card-title">Vous êtes</h3>
-                <List items={SOCIETES} />
-              </div>
-
-              <div className="pourqui__card reveal" style={{ transitionDelay: '0.12s' }}>
-                <h3 className="pourqui__card-title">Vous êtes</h3>
-                <List items={FONCTIONS} />
-              </div>
-            </div>
-
-            <div className="pourqui__card pourqui__card--besoins reveal" style={{ transitionDelay: '0.24s' }}>
-              <h3 className="pourqui__card-title">Vous souhaitez</h3>
-              <div className="pourqui__colonnes">
-                <List items={BESOINS_GENERAUX} />
-                <List items={BESOINS_PONCTUELS} />
-              </div>
             </div>
           </div>
         </div>
