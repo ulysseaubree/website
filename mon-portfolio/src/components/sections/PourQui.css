@@ -4,7 +4,7 @@
 
 .pourqui__grid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr;
+  grid-template-columns: 1.25fr 1fr;
   gap: 1.5rem;
   margin-top: 2.5rem;
   align-items: start;

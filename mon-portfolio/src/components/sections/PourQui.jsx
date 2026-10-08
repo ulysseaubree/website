@@ -4,7 +4,7 @@ import './PourQui.css'
 const SOCIETES = ['Un groupe coté', 'Un groupe non coté', 'Une start-up', 'Un fonds de Private Equity']
 const FONCTIONS = ['Dirigeant', 'Relation Investisseurs', 'Responsable Financement / Trésorerie', 'Responsable RSE']
 const BESOINS_GENERAUX = [
-  'Répondre aux exigences de la réglementation',
+  'Porter votre documentation aux meilleures pratiques de marché',
   'Gagner en visibilité',
   'Atteindre de nouveaux investisseurs',
   'Renforcer votre équipe IR',
@@ -17,10 +17,10 @@ const BESOINS_PONCTUELS = [
   '…',
 ]
 const CAS_CONCRETS = [
-  'Une société non cotée fait l\'objet d\'un LBO. Elle veut maîtriser sa communication avec les investisseurs potentiels et comprendre comment elle doit aborder ces nouveaux interlocuteurs.',
   'Un fonds ou une société d\'investissement souhaite que ses participations répondent aux standards de communication des sociétés cotées.',
+  'Une société ambitionne d\'optimiser l\'élaboration de son Document d\'Enregistrement Universel, de renforcer la fiabilité de sa production, la pertinence de son contenu tout en répondant aux exigences de conformité réglementaire.',
   'Une PME a besoin d\'optimiser ses relations avec son banquier et se présenter de façon professionnelle.',
-  'Une société réfléchit à son introduction en bourse et souhaite se pvers lesréparer en amont à ce nouvel environnement.',
+  'Une société réfléchit à son introduction en bourse et souhaite se préparer en amont à ce nouvel environnement.',
   'Une société cotée veut revoir sa politique de communication et s\'interroge sur celle de ses concurrents.',
   'Une société a besoin de vendre un projet à la communauté financière (projet industriel, opération financière, …)',
 ]
@@ -47,6 +47,13 @@ export default function PourQui() {
         <div className="gold-divider" />
 
         <div className="pourqui__grid">
+          <div className="pourqui__card pourqui__card--cas reveal" style={{ transitionDelay: '0.36s' }}>
+            <h3 className="pourqui__card-title">Cas concrets</h3>
+            <div className="pourqui__cas">
+              {CAS_CONCRETS.map(cas => <p key={cas}>{cas}</p>)}
+            </div>
+          </div>
+
           <div className="pourqui__left">
             <div className="pourqui__top-cards">
               <div className="pourqui__card reveal">
@@ -61,18 +68,11 @@ export default function PourQui() {
             </div>
 
             <div className="pourqui__card pourqui__card--besoins reveal" style={{ transitionDelay: '0.24s' }}>
-              <h3 className="pourqui__card-title">Vous avez besoin de</h3>
+              <h3 className="pourqui__card-title">Vous souhaitez</h3>
               <div className="pourqui__colonnes">
                 <List items={BESOINS_GENERAUX} />
                 <List items={BESOINS_PONCTUELS} />
               </div>
-            </div>
-          </div>
-
-          <div className="pourqui__card pourqui__card--cas reveal" style={{ transitionDelay: '0.36s' }}>
-            <h3 className="pourqui__card-title">Cas concrets</h3>
-            <div className="pourqui__cas">
-              {CAS_CONCRETS.map(cas => <p key={cas}>{cas}</p>)}
             </div>
           </div>
         </div>

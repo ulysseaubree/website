@@ -2,24 +2,25 @@ export const OFFRES = [
   {
     id: 'supports',
     label: 'Communication réglementée & corporate',
-    role: 'valoriser et assurer la cohérence de vos messages sur tous vos supports : DEU, RFS, Rapport intégré, Rapport de durabilité Lettres aux actionnaires, Présentations investisseurs, ...',
+    role: 'valoriser et assurer la cohérence de vos messages sur tous vos supports : DEU, Rapport financier semestriel, Rapport intégré, Lettres aux actionnaires, Présentation investisseurs, Communiqué…',
     content: [
       'Benchmarking des pratiques de marché et de votre secteur',
       'Prise en compte de l\'actualité réglementaire',
-      { label: 'Gestion de projet', sub: ['Structuration', 'Élaboration du contenu', 'Rédaction'] },
+      { label: 'Gestion de projet', sub: ['Structuration de vos documents', 'Élaboration du contenu', 'Rédaction'] },
     ],
   },
   {
     id: 'ir',
     label: 'Relations Investisseurs',
-    role: 'vous aider à préparer et diffuser vos messages selon un périmètre allant du conseil à l\'externalisation.',
+    role: 'vous aider à préparer et diffuser vos messages, du conseil à la prise en charge complète.',
     content: [
       'Accompagnement lors des temps forts : résultats annuels, semestriels, trimestriels',
-      'Études de perception & Q&A',
-      'Benchmarking concurrentiel',
-      'Gestion de la relation analystes / investisseurs',
-      'Relations avec les agences de notation',
-      'Reporting fonds d\'investissement',
+      'Études de perception',
+      'Définition des messages clés',
+      'Rédaction de Q&A',
+      'Rédaction des supports de communication : communiqué, présentation, …',
+      'Benchmarking des publications de comparables (forme et fond)',
+      'Gestion de la relation analystes / investisseurs si externalisation',
     ],
   },
   {
@@ -42,7 +43,7 @@ export const OFFRES = [
     ],
     content: [
       'Conception du pitch investisseurs',
-      'Assistance à l\'établissement des éléments financiers : mise en forme et validation de la pertinence des hypothèses retenues',
+      'Assistance à l\'élaboration du reporting financier : structuration, valorisation des messages, mise en forme et diagnostic de la cohérence de l\'ensemble',
       'Sélection des investisseurs selon leur pertinence',
       'Rencontres investisseurs : organisation et accompagnement du porteur de projet pour ces rendez-vous',
     ],

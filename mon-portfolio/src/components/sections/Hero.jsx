@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="hero__overlay" />
       <div className="container hero__content">
         <h1 className="hero__title">
-          <em>Vos Experts</em> pour vos relations investisseurs et votre communication
+          <em>Boutique - Conseil</em> pour vos relations investisseurs et votre communication
           financière et extra financière
         </h1>
         <p className="hero__desc">
