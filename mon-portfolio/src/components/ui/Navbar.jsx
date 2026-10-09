@@ -47,7 +47,7 @@ export default function Navbar() {
     // Pas d'indice sur le bouton "Nous contacter"
     if (href !== '#contact') {
       setShowScrollHint(true)
-      setTimeout(() => setShowScrollHint(false), 2500)
+      setTimeout(() => setShowScrollHint(false), 10000)
     }
   }
 
