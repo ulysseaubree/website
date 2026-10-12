@@ -29,31 +29,14 @@ export default function Navbar() {
   // Force la fermeture (en fondu) du menu déroulant survolé après un clic sur une
   // sous-section, sans attendre que la souris quitte réellement le bouton parent.
   const [closingDropdown, setClosingDropdown] = useState(false)
-  // Indice de défilement (flèche) : visible en permanence, sauf tout en bas
-  // de la page où il n'y a plus rien à faire défiler.
-  const [atBottom, setAtBottom] = useState(false)
-  // Couleur de la flèche adaptée au fond réellement affiché sous elle (sombre
-  // vs. crème), pour qu'elle reste lisible sur les sections claires.
-  const [onDark, setOnDark] = useState(true)
+  // Petit indice de défilement (flèche) affiché quelques secondes après un clic
+  // sur un raccourci du bandeau, pour montrer qu'il y a du contenu en dessous.
+  const [showScrollHint, setShowScrollHint] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 60)
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight
-      setAtBottom(scrollable <= 0 || window.scrollY >= scrollable - 40)
-      // Sonde décalée du centre pour ne pas pointer sur le bouton lui-même.
-      const probeX = window.innerWidth / 2 + 120
-      const probeY = window.innerHeight - 50
-      const el = document.elementFromPoint(probeX, probeY)
-      setOnDark(!!el?.closest('.section--dark, .hero'))
-    }
-    onScroll()
+    const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-    }
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const handleLink = (e, href, offre) => {
@@ -61,6 +44,11 @@ export default function Navbar() {
     setMenuOpen(false)
     if (offre) window.dispatchEvent(new CustomEvent('open-offre', { detail: offre }))
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    // Pas d'indice sur le bouton "Nous contacter"
+    if (href !== '#contact') {
+      setShowScrollHint(true)
+      setTimeout(() => setShowScrollHint(false), 10000)
+    }
   }
 
   const handleSubLink = (e, href, offre) => {
@@ -123,10 +111,10 @@ export default function Navbar() {
           nouveau bloc de positionnement pour ce bouton "position: fixed", ce qui
           le collait en haut de l'écran au lieu du bas. */}
       <button
-        className={`navbar__scroll-hint${atBottom ? '' : ' navbar__scroll-hint--visible'}${onDark ? '' : ' navbar__scroll-hint--on-light'}`}
+        className={`navbar__scroll-hint${showScrollHint ? ' navbar__scroll-hint--visible' : ''}`}
         onClick={() => window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' })}
-        aria-hidden={atBottom}
-        tabIndex={atBottom ? -1 : 0}
+        aria-hidden={!showScrollHint}
+        tabIndex={showScrollHint ? 0 : -1}
         aria-label="Défiler">
         <ChevronDown size={20} />
       </button>

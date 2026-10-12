@@ -99,20 +99,21 @@
 .navbar__cta { font-size: var(--text-xs); padding: 0.55rem 1.25rem; }
 .navbar__burger { display: none; background: none; border: none; color: var(--color-white); cursor: pointer; z-index: 200; }
 
-/* Indice de défilement permanent (caché tout en bas de page), discret comme
-   l'ancienne flèche de la page d'accueil qu'il remplace désormais partout. */
+/* Indice de défilement temporaire après un clic sur un raccourci du bandeau
+   (même esprit que .hero__scroll-hint, mais piloté par la navbar). */
 .navbar__scroll-hint {
   position: fixed;
   bottom: 2rem; left: 50%;
   transform: translateX(-50%);
   z-index: 90;
-  background: none;
+  background: var(--color-navy);
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 50%;
   width: 40px; height: 40px;
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.85);
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -122,16 +123,9 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  animation: navbar-scroll-hint-bounce 2s ease-in-out infinite;
+  animation: navbar-scroll-hint-bounce 1.6s ease-in-out infinite;
 }
 .navbar__scroll-hint:hover { border-color: var(--color-gold); color: var(--color-gold); }
-/* Sur les sections claires (crème), le blanc semi-transparent se fond dans le
-   fond : on bascule sur une teinte marine pour garder un contraste lisible. */
-.navbar__scroll-hint--on-light {
-  border-color: rgba(27,42,74,0.25);
-  color: rgba(27,42,74,0.55);
-}
-.navbar__scroll-hint--on-light:hover { border-color: var(--color-navy); color: var(--color-navy); }
 @keyframes navbar-scroll-hint-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(6px); }
