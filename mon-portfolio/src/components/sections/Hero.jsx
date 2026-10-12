@@ -1,4 +1,3 @@
-import { ChevronDown } from 'lucide-react'
 import './Hero.css'
 
 export default function Hero() {
@@ -11,7 +10,7 @@ export default function Hero() {
       <div className="container hero__content">
         <h1 className="hero__title">
           <em>Boutique - Conseil</em> pour vos relations investisseurs et votre communication
-          financière et extra financière
+          financière et extra-financière
         </h1>
         <p className="hero__desc">
           <em>OsKar Partners</em> vous propose une réponse opérationnelle pour optimiser
@@ -28,10 +27,7 @@ export default function Hero() {
           les perdre de vue lorsqu'on les poursuit.
           — Oscar Wilde
         </blockquote>
-      </div> 
-      <button className="hero__scroll-hint" onClick={() => scrollTo('#pour-qui')} aria-label="Défiler">
-        <ChevronDown size={22} />
-      </button>
+      </div>
     </section>
   )
 }

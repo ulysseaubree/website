@@ -3,7 +3,6 @@
 // Tant que la liste est vide, le cadre affiche des emplacements réservés.
 import valeo from '../assets/logo/Valeo.webp'
 import veolia from '../assets/logo/veolia.webp'
-import renault from '../assets/logo/renault.png'
 import bpce from '../assets/logo/BPCE.webp'
 import kepler from '../assets/logo/Kepler.webp'
 import latecoere from '../assets/logo/Latecoere.webp'
@@ -17,7 +16,6 @@ import ovh from '../assets/logo/ovh.webp'
 export const PARTENAIRES = [
   { name: 'Valeo', src: valeo },
   { name: 'Veolia', src: veolia },
-  { name: 'Renault', src: renault },
   { name: 'BPCE', src: bpce },
   { name: 'Kepler Cheuvreux', src: kepler },
   { name: 'Latécoère', src: latecoere },

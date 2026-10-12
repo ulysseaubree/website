@@ -21,7 +21,7 @@ export default function QuiSommesNous() {
             <div className="qsn__mission">
               <h4 className="qsn__why-heading">Notre mission est créatrice de valeur</h4>
               <p className="qsn__text">
-                Plus que jamais la communication financière et extra financière est un outil de création
+                Plus que jamais la communication financière et extra-financière est un outil de création
                 de valeur pour les entreprises face aux demandes de leurs parties prenantes et dans un
                 contexte d'exigence réglementaire croissante.
               </p>
@@ -29,7 +29,7 @@ export default function QuiSommesNous() {
                 Obtenir l'adhésion de ses investisseurs, actionnaires, banquiers, clients, fournisseurs,
                 salariés, … sur sa stratégie, ses résultats, ses perspectives, est en effet un enjeu
                 déterminant pour tout type de société grande ou petite, cotée ou pas. Une communication
-                financière et extra financière efficace, transparente et pédagogique permet d'y répondre
+                financière et extra-financière efficace, transparente et pédagogique permet d'y répondre
                 avec succès.
               </p>
               <div className="qsn__mission-image">
@@ -40,8 +40,8 @@ export default function QuiSommesNous() {
             <div>
               <h4 className="qsn__why-heading">Nous avons développé une approche de Boutique - Conseil</h4>
               <p className="qsn__text">
-                Vous avez accès à des <strong>experts</strong> de vos problématiques, immédiatement
-                opérationnels. Vous bénéficiez de leur <strong>séniorité</strong> et de leur vision
+                Vous avez accès à des <strong>experts</strong> de vos problématiques, immédiatement 
+                <strong> opérationnels</strong>. Vous bénéficiez de leur <strong>séniorité</strong> et de leur vision
                 globale de vos enjeux.
               </p>
               <p className="qsn__text">
@@ -49,7 +49,7 @@ export default function QuiSommesNous() {
                 la compréhension de vos besoins et la souplesse de notre structure.</strong>
               </p>
               <p className="qsn__text">
-                Autour de la Relation investisseurs, OsKar a développé un réseau de partenaires experts
+                Autour de la communication financière et des relations investisseurs, OsKar a développé un réseau de partenaires experts
                 sur toute la chaîne de valeur de vos projets dans les domaines de l'ESG, la rédaction,
                 la traduction, le design, la gestion des risques, … Nous pouvons à la demande
                 être un <strong>agrégateur de compétences</strong> pour une <strong>approche intégrée et
