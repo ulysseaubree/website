@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import linkedinIcon from '../../assets/linkedin.webp'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import logoOskar from '../../assets/oskar_logo.png'
@@ -32,12 +32,33 @@ export default function Navbar() {
   // Petit indice de défilement (flèche) affiché quelques secondes après un clic
   // sur un raccourci du bandeau, pour montrer qu'il y a du contenu en dessous.
   const [showScrollHint, setShowScrollHint] = useState(false)
+  const scrollHintTimer = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Masque l'indice dès que l'utilisateur fait défiler lui-même la page. On écoute
+  // les gestes (molette, tactile, clavier) plutôt que l'événement `scroll`, qui se
+  // déclenche aussi pendant le défilement fluide lancé par le clic sur le raccourci.
+  useEffect(() => {
+    if (!showScrollHint) return
+    const hide = () => setShowScrollHint(false)
+    const SCROLL_KEYS = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' ']
+    const onKey = e => { if (SCROLL_KEYS.includes(e.key)) hide() }
+    window.addEventListener('wheel', hide, { passive: true })
+    window.addEventListener('touchmove', hide, { passive: true })
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('wheel', hide)
+      window.removeEventListener('touchmove', hide)
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [showScrollHint])
+
+  useEffect(() => () => clearTimeout(scrollHintTimer.current), [])
 
   const handleLink = (e, href, offre) => {
     e.preventDefault()
@@ -47,7 +68,8 @@ export default function Navbar() {
     // Pas d'indice sur le bouton "Nous contacter"
     if (href !== '#contact') {
       setShowScrollHint(true)
-      setTimeout(() => setShowScrollHint(false), 10000)
+      clearTimeout(scrollHintTimer.current)
+      scrollHintTimer.current = setTimeout(() => setShowScrollHint(false), 5000)
     }
   }
 
